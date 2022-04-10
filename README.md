@@ -5,6 +5,7 @@
   - 用執行檔方式安裝 node 版本:14.17.1
 https://nodejs.org/download/release/v14.17.1/
 - x64.msi 版本
+
 (註): 如果之前有安裝其他版本，先解除安裝，再另外安裝此版本
 
 # 3. 安裝  webpack 全域版本
