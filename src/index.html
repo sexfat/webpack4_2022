@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+     <!-- 到webpack.config.js 裡找這段參數 -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="logo">Webpack 範例</h1>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">首頁</a>
+                    </li>
+                    <li class="active01"><a href="about.html">關於我們</a>  </li>
+                    <li class="active02"><a href="contact.html">聯絡我們</a> </li>
+                </ul>
+            </nav>
+            <div class="login"></div>
+        </header>
+        <div class="content">
+            <div id="app">{{ message }}</div>
+        </div>
+        <!-- 樣板 footer -->
+        <footer>
+        </footer>
+    </div>
+    <!-- <script src="./dist/bundle.js" ></script> -->
+
+</body>
+
+</html>
