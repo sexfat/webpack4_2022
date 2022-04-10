@@ -1,11 +1,12 @@
-1. 先確認有沒有安裝nvm，如果有的先解安裝
+# 1. 先確認有沒有安裝nvm，如果有的先解安裝
 
-2. 檢查nodejs 版本 :  14.17.1 or 14.17.2 版本
-# 使用執行檔方式安裝 node 版本:14.17.1
+# 2. 檢查nodejs 版本 :  14.17.1 or 14.17.2 版本
+
+  - 用執行檔方式安裝 node 版本:14.17.1
 https://nodejs.org/download/release/v14.17.1/
 - x64.msi 版本
 
-3. 安裝  webpack 全域版本
+# 3. 安裝  webpack 全域版本
 -  `npm install webpack@4.43.0 -g`
 - `npm install webpack-cli@3.3.12 -g`
 
