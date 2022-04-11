@@ -37,3 +37,26 @@ https://nodejs.org/download/release/v14.17.1/
   },
 ```
 
+如果發生以下問題
+
+```
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! datav.jiaminghi.com@2.0.0 dev: `vuepress dev docs`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the datav.jiaminghi.com@2.0.0 dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/cuihongzhen/.npm/_logs/2019-10-12T03_11_33_427Z-debug.log
+```
+
+1. 請在移除node_modules / package-lock.json  檔案
+2. 在終端機輸入: 
+```
+npm cache clear --force
+npm install
+```
+
+在執行一次
