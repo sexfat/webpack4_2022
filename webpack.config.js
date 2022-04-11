@@ -10,6 +10,10 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 
 
+
+
+
+
 module.exports = {
     entry: {
         index: './src/index.js', // js 開發檔案
@@ -109,3 +113,5 @@ module.exports = {
     },// 服務器配置
     mode: 'development'      // 開發模式配置 development   // 上線 production
 }
+
+
