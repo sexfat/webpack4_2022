@@ -6,7 +6,6 @@ const {
 } = require('clean-webpack-plugin');  //清除舊檔案
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // html 
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 
 
