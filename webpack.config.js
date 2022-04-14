@@ -8,6 +8,17 @@ const {
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // html 
 
 
+let htmlPageNames = ['index', 'about', 'contact', 'gsap'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    minify: false, // 是否壓縮html
+    template: `./src/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`] // respective JS files
+  })
+});
+
+
 
 
 
@@ -17,7 +28,8 @@ module.exports = {
     entry: {
         index: './src/index.js', // js 開發檔案
         about: './src/about.js',
-        contact: './src/content.js'
+        contact: './src/contact.js',
+        gsap: './src/gsap.js'
     },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -66,37 +78,37 @@ module.exports = {
         }),
 
         //html 編譯
-        new HtmlWebpackPlugin({
-            chunks: ['index'],  //選擇注入資源 chunk，會對應到 entry 裡的 chunkname
-            inject: 'body', //預設 script 位置 在</body>， 如果選擇 head <script>標籤會在head 
-            template: './src/index.html', //來源
-            filename: 'index.html', //產出位置
-            minify: false, // 是否壓縮html
-            title: '首頁新'  // 放入 title位址 
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['about'],  //選擇注入資源 chunk
-            inject: 'body', //預設<body> js </body>  head or body
-            template: './src/about.html', //來源
-            filename: 'about.html', //目的地
-            minify: false, // 壓縮html
-            title: '關於我們頁面'  // 放入 title 
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ['about'],  //選擇注入資源 chunk
-            inject: 'body', //預設<body> js </body>  head or body
-            template: './src/contact.html', //來源
-            filename: 'contact.html', //目的地
-            minify: false, // 壓縮html
-            title: '聯絡我們'  // 放入 title 
-        }),
+        // new HtmlWebpackPlugin({
+        //     chunks: ['index'],  //選擇注入資源 chunk，會對應到 entry 裡的 chunkname
+        //     inject: 'body', //預設 script 位置 在</body>， 如果選擇 head <script>標籤會在head 
+        //     template: './src/index.html', //來源
+        //     filename: 'index.html', //產出位置
+        //     minify: false, // 是否壓縮html
+        //     title: '首頁新'  // 放入 title位址 
+        // }),
+        // new HtmlWebpackPlugin({
+        //     chunks: ['about'],  //選擇注入資源 chunk
+        //     inject: 'body', //預設<body> js </body>  head or body
+        //     template: './src/about.html', //來源
+        //     filename: 'about.html', //目的地
+        //     minify: false, // 壓縮html
+        //     title: '關於我們頁面'  // 放入 title 
+        // }),
+        // new HtmlWebpackPlugin({
+        //     chunks: ['about'],  //選擇注入資源 chunk
+        //     inject: 'body', //預設<body> js </body>  head or body
+        //     template: './src/contact.html', //來源
+        //     filename: 'contact.html', //目的地
+        //     minify: false, // 壓縮html
+        //     title: '聯絡我們'  // 放入 title 
+        // }),
 
         //全域加載jq，如果有需要全域使用jquery 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
         })
-    ],// 
+    ].concat(multipleHtmlPlugins),// 
     resolve: {
         alias: {
             vue: 'vue/dist/vue.js'
@@ -107,7 +119,7 @@ module.exports = {
         host: 'localhost',
         port: 3000,
         // 指定首頁檔案
-        index: 'index.html',
+        index: 'gsap.html',
         open: true
     },// 服務器配置
     mode: 'development'      // 開發模式配置 development   // 上線 production

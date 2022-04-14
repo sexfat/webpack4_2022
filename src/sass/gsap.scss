@@ -1,0 +1,71 @@
+body {
+  background-color: rgb(253, 226, 53);
+  margin: 0;
+  padding: 0;
+
+  section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    &:nth-child(even) {
+      background-color: rgb(255, 227, 133);
+
+    }
+
+    &.hv2 {
+
+      height: 200vh;
+
+    }
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(17, 57, 201);
+
+  }
+
+  .s1 {
+    position: relative;
+    top: 300px;
+    left: 400px;
+  }
+
+  .s2 {
+    position: relative;
+    top:400px;
+    left: 200px;
+    background-color: rgb(35, 255, 94);
+  }
+  .r1 {
+    width:  10px;
+    position: relative;
+    top: 50px;
+    left: 200px;
+  }
+  .r2 {
+    width:  10px;
+   position: relative;
+   top: 50px;
+   left: 200px;
+ }
+ img{
+    width: 400px;
+    height: 300px;
+    z-index: 1;
+    position: relative;
+    top: 50px;
+    left: 30px;
+ } 
+ .color {
+   position: absolute;
+   z-index: 2;
+   top: 30px;
+   left: 170px;
+   width: 500px;
+   height:  100px;
+   background-color: rgb(254, 167, 75);
+ }
+}
